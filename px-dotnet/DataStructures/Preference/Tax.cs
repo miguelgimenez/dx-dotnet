@@ -9,7 +9,7 @@ namespace MercadoPago.DataStructures.Preference
     public struct Tax {
         #region Properties
         private TaxType? _type;
-        private float? _value;
+        private decimal? _value;
         #endregion
 
         #region Accessors
@@ -23,7 +23,7 @@ namespace MercadoPago.DataStructures.Preference
         /// <summary>
         /// Tax value
         /// </summary>
-        public float? Value { 
+        public decimal? Value { 
             get { return _value; }
             set { _value = value; }
         }

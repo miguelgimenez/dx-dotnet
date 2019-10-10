@@ -63,7 +63,7 @@ MercadoPago.SDK.ClientSecret = "YOUR_ACCESS_TOKEN";
 
 Payment payment = new Payment
 {
-    TransactionAmount = (float)100.0,
+    TransactionAmount = (decimal)100.0,
     Token = "YOUR_CARD_TOKEN"
     Description = "Ergonomic Silk Shirt",
     PaymentMethodId = "visa", 

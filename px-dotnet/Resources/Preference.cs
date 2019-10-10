@@ -97,7 +97,7 @@ namespace MercadoPago.Resources
         private string _client_id;
         [StringLength(256)]
         private string _marketplace;
-        private float? _marketplace_fee;
+        private decimal? _marketplace_fee;
         private DifferentialPricing? _differential_pricing;
         private long? _sponsor_id;
         private List<ProcessingMode> _processing_modes;
@@ -395,7 +395,7 @@ namespace MercadoPago.Resources
         /// <summary>
         /// Marketplace's fee charged by application owner. Default value: 0%
         /// </summary>
-        public float? Marketplace_fee 
+        public decimal? Marketplace_fee 
         {
             get
             {

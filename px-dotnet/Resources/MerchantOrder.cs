@@ -59,9 +59,9 @@ namespace MercadoPago.Resources
         private Collector collector;
         private long? sponsorId;
         private List<MerchantOrderPayment> payments;
-        private float? paidAmount;
-        private float? refundedAmount;
-        private float? shippingCost;
+        private decimal? paidAmount;
+        private decimal? refundedAmount;
+        private decimal? shippingCost;
         private bool? cancelled;
         private List<Item> items;
         private List<Shipment> shipments;
@@ -73,7 +73,7 @@ namespace MercadoPago.Resources
         private string externalReference;
         [StringLength(256)]
         private string marketplace;
-        private float? totalAmount;
+        private decimal? totalAmount;
 
         #endregion
 
@@ -143,17 +143,17 @@ namespace MercadoPago.Resources
             get { return payments; }            
         }        
 
-        public float? PaidAmount
+        public decimal? PaidAmount
         {
             get { return paidAmount; }            
         }
        
-        public float? RefundedAmount
+        public decimal? RefundedAmount
         {
             get { return refundedAmount; }            
         }
 
-        public float? ShippingCost
+        public decimal? ShippingCost
         {
             get { return shippingCost; }            
         }
@@ -218,7 +218,7 @@ namespace MercadoPago.Resources
             set { marketplace = value; }
         }
        
-        public float? TotalAmount
+        public decimal? TotalAmount
         {
             get { return totalAmount; }
         }

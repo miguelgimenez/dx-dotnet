@@ -109,7 +109,7 @@ namespace MercadoPagoSDK.Test.Resources
             
             Payment payment = new Payment
             {
-                TransactionAmount = (float)20.0,
+                TransactionAmount = (decimal)20.0,
                 Token = Helpers.CardHelper.SingleUseCardToken(PublicKey, "pending"), // 1 use card token
                 Description = "Pago de Prueba",
                 PaymentMethodId = "visa",
@@ -174,7 +174,7 @@ namespace MercadoPagoSDK.Test.Resources
             Thread.Sleep(500);
             Payment OtherPayment = new Payment
             {
-                TransactionAmount = (float)10.0,
+                TransactionAmount = (decimal)10.0,
                 Token = Helpers.CardHelper.SingleUseCardToken(PublicKey, "approved"), // 1 use card token
                 Description = "Pago de Prueba",
                 PaymentMethodId = "visa",
