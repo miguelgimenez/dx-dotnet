@@ -99,7 +99,7 @@ namespace MercadoPagoSDK.Test.Resources
         [Test()]
         public void Customer_SearchWithFilterGetListOfCustomers()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Dictionary<string, string> filters = new Dictionary<string, string>();
             filters.Add("email", "Rafa.Williner@gmail.com");
             List<Customer> customers = Customer.Search(filters);
