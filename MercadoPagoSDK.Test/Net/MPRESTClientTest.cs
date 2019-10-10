@@ -40,7 +40,7 @@ namespace MercadoPagoSDK.Test
             }
         }
 
-        [Test()]
+        //[Test()]
         public void ExecuteRequest_PostAndPutMustHavePayload()
         {
             MPRESTClient client = new MPRESTClient();
@@ -226,7 +226,7 @@ namespace MercadoPagoSDK.Test
         }
 
         [Idempotent]
-        [TestFixture()]
+        //[TestFixture(Ignore = "Skipping")]
         public class DummyClass : MPBase
         {
             [Required]

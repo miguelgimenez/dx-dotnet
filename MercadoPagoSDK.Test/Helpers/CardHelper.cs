@@ -45,7 +45,7 @@ namespace MercadoPagoSDK.Test.Helpers
                         "\"name\": \"" + CardsNameForStatus[status] + "\", " +
                         "\"identification\": " +
                         "{ " +
-                            "\"type\": \"DNI\", " +
+                            "\"type\": \"CI\", " +
                             "\"number\": \"12345678\" " +
                         "} " +
                     "} " +

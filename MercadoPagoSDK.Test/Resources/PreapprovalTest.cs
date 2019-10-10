@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace MercadoPagoSDK.Test.Resources
 {
-    [TestFixture()]
+    [TestFixture(Ignore = "Skipping not available in MLU")]
     public class PreapprovalTest
     {
         Preapproval LastPreapproval;
@@ -20,6 +20,7 @@ namespace MercadoPagoSDK.Test.Resources
         {
             // Avoid SSL Cert error
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             SDK.CleanConfiguration();
             SDK.ClientId = Environment.GetEnvironmentVariable("CLIENT_ID");
             SDK.ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Net;
 
 namespace MercadoPagoSDK.Test.Core
 {
@@ -79,11 +80,12 @@ namespace MercadoPagoSDK.Test.Core
             Assert.Fail();
         }
 
-        [Test()]
+        [Ignore("")]
         public void MPIPN_ShouldBeOk()
         {
             SDK.CleanConfiguration();
             SDK.SetAccessToken(Environment.GetEnvironmentVariable("ACCESS_TOKEN"));
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             Payment payment = new Payment();
             Payer payer = new Payer();
@@ -149,7 +151,7 @@ namespace MercadoPagoSDK.Test.Core
 
         public string GenerateSingleUseCardToken()
         {
-            JObject payload = JObject.Parse("{ \"card_number\": \"4544610257481730\", \"security_code\": \"122\", \"expiration_month\": \"7\", \"expiration_year\": \"2030\", \"cardholder\": { \"name\": \"Test test\", \"identification\": { \"type\": \"DNI\", \"number\": \"12345678\" } } }");
+            JObject payload = JObject.Parse("{ \"card_number\": \"4544610257481730\", \"security_code\": \"122\", \"expiration_month\": \"7\", \"expiration_year\": \"2030\", \"cardholder\": { \"name\": \"Test test\", \"identification\": { \"type\": \"CI\", \"number\": \"12345678\" } } }");
             MPRESTClient client = new MPRESTClient();
             MPAPIResponse responseCardToken = client.ExecuteRequest(
                 HttpMethod.POST,

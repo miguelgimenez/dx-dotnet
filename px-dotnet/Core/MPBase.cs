@@ -709,6 +709,8 @@ namespace MercadoPago
         public static Type GetTypeFromStack()
         {
             MethodBase methodBase = new StackTrace().GetFrame(2).GetMethod();
+            if (methodBase.DeclaringType.IsAbstract)
+                methodBase = new StackTrace().GetFrame(3).GetMethod();
             var className = methodBase.DeclaringType.FullName;
             var type = Type.GetType(className);
             if (type != null) return type;

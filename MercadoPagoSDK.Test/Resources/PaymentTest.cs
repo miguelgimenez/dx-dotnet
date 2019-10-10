@@ -8,6 +8,7 @@ using MercadoPago.DataStructures.Payment;
 using MercadoPago;
 using Newtonsoft.Json.Linq;
 using System.Net;
+using System.Threading;
 using MercadoPago.Common;
 
 namespace MercadoPagoSDK.Test.Resources
@@ -23,6 +24,7 @@ namespace MercadoPagoSDK.Test.Resources
         public void Init(){ 
             // Avoid SSL Cert error
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             // HardCoding Credentials
             AccessToken = Environment.GetEnvironmentVariable("ACCESS_TOKEN");
             PublicKey = Environment.GetEnvironmentVariable("PUBLIC_KEY");
@@ -169,7 +171,7 @@ namespace MercadoPagoSDK.Test.Resources
         [Test] 
         public void Payment_Refund()
         {
-            
+            Thread.Sleep(500);
             Payment OtherPayment = new Payment
             {
                 TransactionAmount = (float)10.0,
