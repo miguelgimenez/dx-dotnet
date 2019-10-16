@@ -256,7 +256,7 @@ namespace MercadoPago
                 mpRequest.Request.Timeout = requestOptions.Timeout;
             }
 
-            mpRequest.Request.Headers.Add("x-product-id", "BC32BHVTRPP001U8NHL0");
+            //mpRequest.Request.Headers.Add("x-product-id", "BC32BHVTRPP001U8NHL0");
             if (requestOptions.CustomHeaders != null)
             {
                 foreach (var header in requestOptions.CustomHeaders)
@@ -289,7 +289,7 @@ namespace MercadoPago
                     data = Encoding.ASCII.GetBytes(payload.ToString());
                 }
 
-                mpRequest.Request.UserAgent = "MercadoPago DotNet SDK/" + SDK.Version;
+                //mpRequest.Request.UserAgent = "MercadoPago DotNet SDK/" + SDK.Version;
                 mpRequest.Request.ContentLength = data.Length;
                 mpRequest.Request.ContentType = payloadType == PayloadType.JSON ? "application/json" : "application/x-www-form-urlencoded";
                 mpRequest.RequestPayload = data;
