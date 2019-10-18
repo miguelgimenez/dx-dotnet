@@ -8,7 +8,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using MercadoPago.DataStructures.MerchantOrder;
 using Newtonsoft.Json.Converters;
+using Payer = MercadoPago.DataStructures.Payment.Payer;
 
 namespace MercadoPago.Resources
 {
@@ -163,11 +165,13 @@ namespace MercadoPago.Resources
         [JsonConverter(typeof(StringEnumConverter))]
         private OperationType? _operation_type;
         private Payer _payer;
+        private Collector _collector;
         private bool? _binary_mode;
         private bool? _live_mode;
         private Order? _order ;
         private string _external_reference;
         private string _description;
+        private string _marketplace;
         private JObject _metadata;
         [StringLength(3)] 
         [JsonConverter(typeof(StringEnumConverter))]
@@ -262,7 +266,7 @@ namespace MercadoPago.Resources
         public OperationType? OperationType 
         {
             get { return this._operation_type; }
-            private set { this._operation_type = value; }
+            set { this._operation_type = value; }
         } 
         /// <summary>
         /// Identifies the buyer  
@@ -271,7 +275,13 @@ namespace MercadoPago.Resources
         {
             get { return this._payer; }
             set { this._payer = value; }
-        } 
+        }
+
+        public Collector Collector
+        {
+            get { return _collector; }
+            set { _collector = value; }
+        }
         /// <summary>
         /// When set to true, the payment can only be approved or rejected. 
         /// Otherwise in_process status is added
@@ -304,7 +314,7 @@ namespace MercadoPago.Resources
         {
             get { return this._external_reference; }
             set { this._external_reference = value; }
-        } 
+        }
         /// <summary>
         /// Payment reason or item title
         /// </summary>
@@ -312,7 +322,12 @@ namespace MercadoPago.Resources
         {
             get { return this._description; }
             set { this._description = value; }
-        } 
+        }
+        public string Marketplace
+        {
+            get { return this._marketplace; }
+            set { this._marketplace = value; }
+        }
         /// <summary>
         /// Valid JSON that can be attached to the payment to record additional attributes of the merchant
         /// </summary>
@@ -472,7 +487,7 @@ namespace MercadoPago.Resources
         public PaymentTypeId? PaymentTypeId
         {
             get { return this._payment_type_id; }
-            private set { this._payment_type_id = value; }
+            set { this._payment_type_id = value; }
         } 
         /// <summary>
         /// Card token ID
