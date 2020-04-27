@@ -11,13 +11,13 @@ namespace MercadoPago.Resources
     {
         #region Actions
         
-        public MerchantOrder Load(string id) 
+        public static MerchantOrder Load(string id) 
         {
             return Load(id, WITHOUT_CACHE, null);
         }
 
         [GETEndpoint("/merchant_orders/:id")]
-        public MerchantOrder Load(string id, bool useCache, MPRequestOptions requestOptions)
+        public static MerchantOrder Load(string id, bool useCache, MPRequestOptions requestOptions)
         {
             return (MerchantOrder)ProcessMethod<MerchantOrder>(typeof(MerchantOrder), "Load", id, useCache, requestOptions);
         }
