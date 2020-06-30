@@ -48,23 +48,6 @@ namespace MercadoPago.Resources
 
         #region Properties
 
-        private string id;
-        private string preferenceId;
-        private DateTime? dateCreated;
-        private DateTime? lastUpdate;
-        private string applicationId;
-        private string status;
-        private string siteId;
-        private Payer payer;
-        private Collector collector;
-        private long? sponsorId;
-        private List<MerchantOrderPayment> payments;
-        private decimal? paidAmount;
-        private decimal? refundedAmount;
-        private decimal? shippingCost;
-        private bool? cancelled;
-        private List<Item> items;
-        private List<Shipment> shipments;
         [StringLength(500)]
         private string notificationUrl;
         [StringLength(600)]
@@ -73,7 +56,6 @@ namespace MercadoPago.Resources
         private string externalReference;
         [StringLength(256)]
         private string marketplace;
-        private decimal? totalAmount;
 
         #endregion
 
@@ -81,117 +63,60 @@ namespace MercadoPago.Resources
        
         public string ID
         {
-            get { return id; }
-            set { this.id = value; } //This Accessor must be removed after testing approvement.
-        }
-       
-        public string PreferenceId
-        {
-            get { return preferenceId; }
-            set { preferenceId = value; }
-        }        
-
-        public DateTime? DateCreated
-        {
-            get { return dateCreated; }            
+            get;
+            set;
+            //This Accessor must be removed after testing approvement.
         }
 
-        
+        public string PreferenceId { get; set; }
 
-        public DateTime? LastUpdate
-        {
-            get { return lastUpdate; }            
-        }
+        public DateTime? DateCreated { get; set; }
 
-        public string ApplicationId
-        {
-            get { return applicationId; }
-            set { applicationId = value; }
-        }
 
-        public string Status
-        {
-            get { return status; }            
-        }
+        public DateTime? LastUpdate { get; set; }
 
-        public string SiteId
-        {
-            get { return siteId; }
-            set { siteId = value; }
-        }
+        public string ApplicationId { get; set; }
 
-        public Payer Payer
-        {
-            get { return payer; }
-            set { payer = value; }
-        }
+        public string Status { get; set; }
 
-        public Collector Collector
-        {
-            get { return collector; }
-            set { collector = value; }
-        }
+        public string SiteId { get; set; }
 
-        public long? SponsorId
-        {
-            get { return sponsorId; }
-            set { sponsorId = value; }
-        }
+        public Payer Payer { get; set; }
 
-        public List<MerchantOrderPayment> Payments
-        {
-            get { return payments; }            
-        }        
+        public Collector Collector { get; set; }
 
-        public decimal? PaidAmount
-        {
-            get { return paidAmount; }            
-        }
-       
-        public decimal? RefundedAmount
-        {
-            get { return refundedAmount; }            
-        }
+        public long? SponsorId { get; set; }
 
-        public decimal? ShippingCost
-        {
-            get { return shippingCost; }            
-        }
+        public List<MerchantOrderPayment> Payments { get; set; }
 
-        public bool? Cancelled
-        {
-            get { return cancelled; }
-            set { cancelled = value; }
-        }
+        public decimal? PaidAmount { get; set; }
 
-        public List<Item> Items
-        {
-            get { return items; }
-            set { items = value; }
-        }
+        public decimal? RefundedAmount { get; set; }
+
+        public decimal? ShippingCost { get; set; }
+
+        public bool? Cancelled { get; set; }
+
+        public List<Item> Items { get; set; }
 
         public void AppendItem(Item item)
         {
-            if (items == null)
+            if (Items == null)
             {
-                items = new List<Item>();
+                Items = new List<Item>();
             }
-            items.Add(item);            
+            Items.Add(item);            
         }        
 
-        public List<Shipment> Shipments
-        {
-            get { return shipments; }
-            set { shipments = value; }
-        }
+        public List<Shipment> Shipments { get; set; }
 
         public void AppendShipment(Shipment shipment)
         {
-            if (shipments == null)
+            if (Shipments == null)
             {
-                shipments = new List<Shipment>();
+                Shipments = new List<Shipment>();
             }
-            shipments.Add(shipment);            
+            Shipments.Add(shipment);            
         }
 
         public string NotificationUrl
@@ -218,10 +143,7 @@ namespace MercadoPago.Resources
             set { marketplace = value; }
         }
        
-        public decimal? TotalAmount
-        {
-            get { return totalAmount; }
-        }
+        public decimal? TotalAmount { get; set; }
 
         #endregion
     }

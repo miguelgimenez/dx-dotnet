@@ -10,67 +10,26 @@ namespace MercadoPago.DataStructures.MerchantOrder
     {
         #region Properties
 
-        private string id;
-        private string categoryId;
-        [RegularExpression(@"^.{3,3}$")]        
-        private string currencyId;
-        private string description;
-        private string pictureUrl;
-        private int quantity;
-        private decimal unitPrice;
-        private string title;
-
         #endregion
 
         #region Accessors
 
-        public string ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        public string ID { get; set; }
 
-        public string CategoryId
-        {
-            get { return categoryId; }
-            set { categoryId = value; }
-        }
+        public string CategoryId { get; set; }
 
-        public string CurrencyId
-        {
-            get { return currencyId; }
-            set { currencyId = value; }
-        }
-       
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
-        }        
+        [RegularExpression(@"^.{3,3}$")]
+        public string CurrencyId { get; set; }
 
-        public string PictureUrl
-        {
-            get { return pictureUrl; }
-            set { pictureUrl = value; }
-        }
+        public string Description { get; set; }
 
-        public int Quantity
-        {
-            get { return quantity; }
-            set { quantity = value; }
-        }
+        public string PictureUrl { get; set; }
 
-        public decimal UnitPrice
-        {
-            get { return unitPrice; }
-            set { unitPrice = value; }
-        }
+        public int Quantity { get; set; }
 
-        public string Title
-        {
-            get { return title; }
-            set { title = value; }
-        }
+        public decimal UnitPrice { get; set; }
+
+        public string Title { get; set; }
 
         #endregion
     }

@@ -11,89 +11,40 @@ namespace MercadoPago.DataStructures.MerchantOrder
     {
         #region Properties
 
-        private string id;
-        private decimal transactionAmount;
-        private decimal totalPaidAmount;
-        private decimal shippingCost;
-       
-        [StringLength(3)]
-        private CurrencyId currencyId;
-        private string status;
-        private string statusDetail;
-        public enum OperationType
-        {
-            RegularPayment,
-            PaymentAddition
-        }
-        private OperationType operationType;
-        private DateTime dateApproved;
-        private DateTime dateCreated;
-        private DateTime lastModified;
-        private decimal amountRefunded;
-        
+        //public enum OperationTypeEmun
+        //{
+        //    RegularPayment = 0,
+        //    PaymentAddition = 1
+        //}
+
         #endregion
 
         #region Accessors
 
-        public string ID
-        {
-            get { return id; }            
-        }
-       
-        public decimal TransactionAmount
-        {
-            get { return transactionAmount; }            
-        }
-       
-        public decimal TotalPaidAmount
-        {
-            get { return totalPaidAmount; }            
-        }
-       
-        public decimal ShippingCost
-        {
-            get { return shippingCost; }            
-        }
-             
-        public CurrencyId PaymentCurrencyId
-        {
-            get { return currencyId; }            
-        }
-       
-        public string Status
-        {
-            get { return status; }            
-        }
-       
-        public string StatusDetail
-        {
-            get { return statusDetail; }            
-        }
+        public string Id { get; set; }
 
-        public OperationType PaymentOperationType
-        {
-            get { return operationType; }            
-        }
-        
-        public DateTime DateApproved
-        {
-            get { return dateApproved; }            
-        }
-       
-        public DateTime DateCreated
-        {
-            get { return dateCreated; }            
-        }        
+        public decimal TransactionAmount { get; set; }
 
-        public DateTime LastModified
-        {
-            get { return lastModified; }            
-        }
-       
-        public decimal AmountRefunded
-        {
-            get { return amountRefunded; }            
-        }
+        public decimal TotalPaidAmount { get; set; }
+
+        public decimal ShippingCost { get; set; }
+
+        //[StringLength(3)]
+        public string CurrencyId { get; set; }
+
+        public string Status { get; set; }
+
+        public string StatusDetail { get; set; }
+
+        public string OperationType { get; set; }
+
+        public DateTime? DateApproved { get; set; }
+
+        public DateTime? DateCreated { get; set; }
+
+        public DateTime? LastModified { get; set; }
+
+        public decimal AmountRefunded { get; set; }
 
         #endregion
     }
