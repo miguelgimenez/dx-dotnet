@@ -93,7 +93,7 @@ namespace MercadoPago.Resources
         private bool? _expires;
         private DateTime? _expiration_date_from;
         private DateTime? _expiration_dateTo;
-        private int? _collector_id;
+        private long? _collector_id;
         private string _client_id;
         [StringLength(256)]
         private string _marketplace;
@@ -350,7 +350,7 @@ namespace MercadoPago.Resources
         /// <summary>
         /// Your MercadoPago seller ID
         /// </summary>
-        public int? CollectorId 
+        public long? CollectorId 
         {
             get
             {

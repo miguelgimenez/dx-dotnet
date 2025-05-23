@@ -9,8 +9,8 @@ namespace MercadoPago.DataStructures.Payment
     public struct Refund
     {
         #region Properties 
-        private int _id;
-        private int _payment_id;
+        private long _id;
+        private long _payment_id;
         private decimal _amount;
         private JObject _metadata;
         private Source? _source;
@@ -22,14 +22,14 @@ namespace MercadoPago.DataStructures.Payment
         /// <summary>
         /// Refund identifier
         /// </summary>
-        public int Id { 
+        public long Id { 
             get { return  _id; }  
             private set { _id = value; } 
         }
         /// <summary>
         /// Payment on which the return was made
         /// </summary>
-        public int PaymentId { 
+        public long PaymentId { 
             get { return  _payment_id; }  
             private set { _payment_id = value; } 
         }

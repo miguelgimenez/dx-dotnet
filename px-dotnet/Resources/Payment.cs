@@ -161,7 +161,7 @@ namespace MercadoPago.Resources
         private DateTime? _date_approved;
         private DateTime? _date_last_updated;
         private DateTime? _money_release_date;
-        private int? _collector_id; 
+        private long? _collector_id; 
         [JsonConverter(typeof(StringEnumConverter))]
         private OperationType? _operation_type;
         private Payer _payer;
@@ -180,11 +180,11 @@ namespace MercadoPago.Resources
         private decimal? _net_amount;
         private decimal? _transaction_amount_refunded;
         private decimal? _coupon_amount;
-        private int? _campaign_id;
+        private long? _campaign_id;
         private string _coupon_code;
         private TransactionDetail? _transaction_details;
         private List<FeeDetail> _fee_details;
-        private int? _differential_pricing_id;
+        private long? _differential_pricing_id;
         private decimal? _application_fee;  
         [JsonConverter(typeof(StringEnumConverter))]
         private PaymentStatus? _status;         
@@ -255,7 +255,7 @@ namespace MercadoPago.Resources
         /// <summary>
         /// Identifies the seller
         /// </summary>
-        public int? CollectorId
+        public long? CollectorId
         {
             get { return this._collector_id; }
             private set { this._collector_id = value; }
@@ -380,7 +380,7 @@ namespace MercadoPago.Resources
         /// <summary>
         /// Discount campaign ID
         /// </summary>
-        public int? CampaignId
+        public long? CampaignId
         {
             private get { return this._campaign_id; }
             set { this._campaign_id = value; }
@@ -412,7 +412,7 @@ namespace MercadoPago.Resources
         /// <summary>
         /// Id of the scheme for the absorption of financing fee
         /// </summary>
-        public int? DifferentialPricingId
+        public long? DifferentialPricingId
         {
             get { return this._differential_pricing_id; }
             set { this._differential_pricing_id = value; }
